@@ -24,7 +24,7 @@ const listingSchema = new Schema({
 	},
 	price: Number,
 	location: String,
-	coutry: String,
+	country: String,
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
