@@ -8,11 +8,19 @@ const listingSchema = new Schema({
 	},
 	description: String,
 	image: {
-		type: String,
-		set: (V) =>
-			v === ""
-				? "default lhttps://i0.wp.com/picjumbo.com/wp-content/uploads/wooden-pedestal-table-in-nature-for-product-photography-free-image.jpeg?w=600&quality=80"
-				: V,
+		filename: {
+			type: String,
+			default: "listingImage",
+		},
+		url: {
+			type: String,
+			default:
+				"https://i0.wp.com/picjumbo.com/wp-content/uploads/wooden-pedestal-table-in-nature-for-product-photography-free-image.jpeg?w=600&quality=80",
+			set: (v) =>
+				v === ""
+					? "https://i0.wp.com/picjumbo.com/wp-content/uploads/wooden-pedestal-table-in-nature-for-product-photography-free-image.jpeg?w=600&quality=80"
+					: v,
+		},
 	},
 	price: Number,
 	location: String,

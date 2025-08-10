@@ -21,6 +21,11 @@ app.get("/", (req, res) => {
 	res.send(" Hii, I am root");
 });
 
+// app.get("/listings", (req, res) => {
+// 	Listing.find({}).then((res) => {
+// 		console.log(res);
+// 	});
+// });
 app.get("/testListing", async (req, res) => {
 	let sampleListing = new Listing({
 		title: "My New Villa",
@@ -30,8 +35,9 @@ app.get("/testListing", async (req, res) => {
 		country: "India",
 	});
 	await sampleListing.save();
-	console.log("Sample was saved");
-	res.send("Connected succesfully");
+
+	res.send(" succesfull testing");
+    console.log("sample was saved");
 });
 
 app.listen(6060, () => {
